@@ -1,0 +1,23 @@
+@use '../../vars';
+
+.stories {
+    margin: 0;
+    padding: .5rem 0;
+    height: 14%;
+    background-color: vars.$white;
+    border: 1px solid vars.$border-color;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+    list-style: none;
+
+    &::-webkit-scrollbar {
+        width: 0;  /* Remove scrollbar space */
+        background: transparent;  /* Optional: just make scrollbar invisible */
+    }
+
+    .story {
+        margin: 0 .5rem;
+    }
+
+}

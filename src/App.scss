@@ -1,0 +1,13 @@
+@use 'vars';
+
+.app {
+    height: 100vh;
+    background-color: vars.$grey;
+    overflow: hidden;
+
+    .content {
+        margin-top: 1%;
+        height: 97vh;
+        overflow: auto;
+    }
+}

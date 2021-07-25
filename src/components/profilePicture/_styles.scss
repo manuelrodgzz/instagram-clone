@@ -1,0 +1,34 @@
+@use '../../vars';
+
+.profile-picture {
+    border-radius: 50%;
+    background: linear-gradient(45deg, vars.$orage, vars.$pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+
+    &.seen {
+        background: vars.$medium-grey;
+    }
+
+    &.md {
+        $size: 4rem;
+        width: $size;
+        height: $size;
+        font-size: 2px;
+    }
+
+    &.sm {
+        $size: 2.2rem;
+        width: $size;
+        height: $size;
+        font-size: 1px;
+    }
+
+    img {
+        width: 95%;
+        border-radius: 50%;
+        border: 1em solid vars.$white;
+    }
+}

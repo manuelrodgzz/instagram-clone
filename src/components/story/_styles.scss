@@ -1,0 +1,13 @@
+$picture-size: 4.2rem;
+
+.story {
+    text-align: center;
+    width: $picture-size;
+    list-style: none;
+    
+    .username {
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+}

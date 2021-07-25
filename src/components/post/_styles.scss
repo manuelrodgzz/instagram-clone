@@ -1,0 +1,37 @@
+@use '../../vars';
+
+.post {
+    height: 97%;
+    background: vars.$white;
+
+    .head {
+        display: flex;
+        padding: .5rem 0;
+        align-items: center;
+
+        .details {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            margin-left: .5rem;
+        }
+    }
+
+    & > img {
+        width: 100%;
+        height: 60%;
+        object-fit: cover;
+    }
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+
+        .primary {
+            display: flex;
+            width: 25%;
+            justify-content: space-between;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@use '../../vars';
+
+.header {
+    background-color: vars.$white;
+    border: 1px solid vars.$border-color;
+    height: 3vh;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+
+    div {
+
+        display: flex;
+        align-items: center;
+
+        .logo {
+            width: 100%;
+        }
+    }
+    
+    .icons-container {
+
+        justify-content: space-between;
+        margin-left: 15%;
+
+        // svg, .user {
+        //     margin-right: 1rem;
+        // }
+
+        .user, svg {
+            width: 11%;
+        }
+    }
+
+}

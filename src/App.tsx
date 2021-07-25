@@ -59,15 +59,15 @@ const getMultipleRandomData = (dataType: DataType, min = 0, max = 10): any => {
 
 function App() {
 
-  const [following] = useState<IUser[]>(getMultipleRandomData('user', 5, 35))
+  const [followingUsers] = useState<IUser[]>(getMultipleRandomData('user', 12, 35))
 
   return (
     <div className="app">
       <Header />
 
       <Container>
-        <Stories users={following}/>
-        <Posts users={following}/>
+        <Stories users={followingUsers}/>
+        <Posts users={followingUsers}/>
       </Container>
     </div>
   );

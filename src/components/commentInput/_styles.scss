@@ -1,0 +1,51 @@
+@use '../../vars';
+
+.comment-input-container {
+    position: relative;
+    
+    .emoji-picker-react {
+        position: absolute;
+        bottom: 3rem;
+        width: 70%;
+    }
+
+    .comment-input {
+        
+        display: flex;
+        padding: .4rem .2rem;
+        align-items: center;
+        justify-content: space-between;
+        border-top: 1px solid vars.$medium-grey;
+    
+        svg {
+            display: none;
+    
+            @media screen and (min-width: vars.$desktop) {
+                display: block;
+            }
+        }
+    
+        input {
+            width: 78%;
+            height: 1.5rem;
+            border: none;
+    
+            &:focus {
+                outline: none;
+            }
+        }
+    
+        button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: vars.$blue;
+    
+            &[disabled] {
+                color: rgba(vars.$blue, .5);
+            }
+    
+            transition: all 150ms ease;
+        }
+    }
+}

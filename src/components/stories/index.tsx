@@ -75,7 +75,7 @@ const Stories = ({users}: StoriesProps) => {
             <div ref={scrollableDiv} onScroll={handleStoriesScroll}>
                 <ul>
                     { users.map(user => (
-                        user.stories.length > 0 && <Story key={user.name + user.user} user={user}/>
+                        user.stories && user.stories.length > 0 && <Story key={user.name + user.user} user={user}/>
                     )) }
                 </ul>
             </div>

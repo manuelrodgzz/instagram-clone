@@ -5,6 +5,6 @@ export default interface IUser {
     name: string
     user: string
     img: string
-    stories: IStory[]
-    posts: IPost[]
+    stories?: IStory[]
+    posts?: IPost[]
 }

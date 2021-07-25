@@ -10,7 +10,7 @@ interface ProfilePicturesProps {
 const ProfilePicture = ({user, size = 'sm'}: ProfilePicturesProps) => {
 
     return (
-        <div className={`profile-picture ${size} ${user.stories.every(story => story.seen) ? 'seen' : ''}`}>
+        <div className={`profile-picture ${size} ${user.stories ? (user.stories.every(story => story.seen) ? 'seen' : '') : 'seen'}`}>
             <img src={user.img}/>
         </div>
     )

@@ -40,7 +40,7 @@ const getMultipleRandomData = (dataType: DataType, min = 0, max = 10): any => {
         comments: getMultipleRandomData('comment', 0, 10),
         date: faker.date.recent(),
         picture: `${faker.image.city()}?random=${faker.datatype.number()}`, //adding random parameter to avoid cache
-        location: faker.address.cityName()
+        location: faker.datatype.number({min: 0, max: 1}) > 0 ? faker.address.cityName() : undefined
       }
     }
 

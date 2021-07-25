@@ -1,5 +1,25 @@
 @use '../../vars';
 
+@keyframes like-animation {
+
+    from {
+        color: vars.$white;
+    }
+    to {
+        color: red;
+    }
+}
+
+@keyframes bookmark-animation {
+
+    from {
+        color: vars.$white;
+    }
+    to {
+        color: black;
+    }
+}
+
 .post {
     height: 97%;
     background: vars.$white;
@@ -32,6 +52,20 @@
             display: flex;
             width: 25%;
             justify-content: space-between;
+
+            .unliked {
+                animation: like-animation 300ms backwards;
+            }
+
+            .liked {
+                animation: like-animation 300ms forwards;
+            }
+        }
+
+        .secondary {
+            .bookmarked {
+                animation: bookmark-animation 300ms forwards;
+            }
         }
     }
 }

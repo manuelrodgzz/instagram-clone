@@ -4,7 +4,7 @@ import Stories from './components/stories'
 import Posts from './components/posts'
 import faker from 'faker'
 
-import { IStory, IPost, IComment, IUser } from './interfaces'
+import { IUser } from './interfaces'
 import './App.scss';
 
 type DataType = 'story' | 'post' | 'comment' | 'user'

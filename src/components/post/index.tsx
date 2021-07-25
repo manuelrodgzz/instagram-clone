@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { IPost, IUser } from '../../interfaces'
 import ProfilePicture from '../profilePicture'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faEllipsisH } from '@fortawesome/free-solid-svg-icons'
+import { faEllipsisH, faHeart as faHeartSolid, faBookmark as faBookmarkSolid } from '@fortawesome/free-solid-svg-icons'
 import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
 import './_styles.scss'
 import Container from '../cotainer'
@@ -15,8 +15,10 @@ interface PostProps {
 
 const Post = ({post, user}: PostProps) => {
 
+    const [liked, setLiked] = useState(false)
+    const [bookmarked, setBookmarked] = useState(false)
+
     const lastComments = post.comments.sort((a, b) => a.date.getTime() - b.date.getTime()).slice(0, 2)
-    console.log(post.comments.sort((a, b) =>  b.date.getTime() - a.date.getTime()))
 
     const getTime = () => {
         const diffTime = new Date().getTime() - post.date.getTime()
@@ -39,6 +41,8 @@ const Post = ({post, user}: PostProps) => {
 
     return (
         <div className='post'>
+
+            {/* User and picture location */}
             <Container>
                 <div className='head'>
                     <ProfilePicture user={user} size='sm'/>
@@ -52,28 +56,47 @@ const Post = ({post, user}: PostProps) => {
                 </div>
             </Container>
 
-            <img src={post.picture} />
+            {/* Picture */}
+            <img 
+                src={post.picture} 
+                onDoubleClick={() => setLiked(!liked)}
+            />
 
             <Container>    
                 <div className='actions'>
 
+                    {/* Like, comment and share */}
                     <div className="primary">
-                        <FontAwesomeIcon icon={faHeart} size='2x'/>
+                        <FontAwesomeIcon 
+                            icon={liked ? faHeartSolid : faHeart} 
+                            className={liked ? 'liked' : ''} 
+                            size='2x' 
+                            onClick={() => setLiked(!liked)}
+                        />
                         <FontAwesomeIcon icon={faComment} size='2x'/>
                         <FontAwesomeIcon icon={faPaperPlane} size='2x'/>
                     </div>
 
+                    {/* Bookmark */}
                     <div className="secondary">
-                        <FontAwesomeIcon icon={faBookmark} size='2x'/>
+                        <FontAwesomeIcon 
+                            icon={bookmarked ? faBookmarkSolid : faBookmark} 
+                            size='2x'
+                            className={bookmarked ? 'bookmarked' : ''}
+                            onClick={() => setBookmarked(!bookmarked)}
+                        />
                     </div>
                 </div>
 
+                {/* Likes */}
                 <div className='line'>
                     <strong>{new Intl.NumberFormat().format(post.likes)} likes</strong>
                 </div>
 
+                {/* Post description */}
                 <Comment user={user} comment={post.description}/>
 
+                {/* View all comments */}
                 {
                     post.comments.length > 2 && (
                         <div className="line text-dark-grey">
@@ -82,12 +105,14 @@ const Post = ({post, user}: PostProps) => {
                     )
                 }
 
+                {/* Last comments */}
                 {
                     lastComments.map(comment => (
                         <Comment key={comment.user + comment.date.toString()} user={comment.user} comment={comment.text}/>
                     ))
                 }
 
+                {/* Post published time */}
                 <div className="text-dark-grey">
                     {getTime()} ago
                 </div>

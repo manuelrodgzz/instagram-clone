@@ -43,6 +43,7 @@
             width: 0;  /* Remove scrollbar space */
             height: 0;/* Remove scrollbar height*/
             background: transparent;  /* Optional: just make scrollbar invisible */
+            display: none;
         }
 
         ul {

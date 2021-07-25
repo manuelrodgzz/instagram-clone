@@ -33,14 +33,9 @@
         .icons-container {
     
             justify-content: space-between;
-            // margin-left: 15%;
     
             svg, .user {
                 margin-left: 1.1rem;
-            }
-    
-            .user, svg {
-    
                 width: 80%;
     
                 @media screen and (min-width: vars.$tablet) {

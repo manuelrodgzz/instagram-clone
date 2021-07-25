@@ -6,6 +6,7 @@ import faker from 'faker'
 
 import { IUser } from './interfaces'
 import './App.scss';
+import Container from './components/cotainer';
 
 type DataType = 'story' | 'post' | 'comment' | 'user'
 
@@ -58,16 +59,16 @@ const getMultipleRandomData = (dataType: DataType, min = 0, max = 10): any => {
 
 function App() {
 
-  const [following] = useState<IUser[]>(getMultipleRandomData('user', 5, 15))
+  const [following] = useState<IUser[]>(getMultipleRandomData('user', 5, 35))
 
   return (
     <div className="app">
       <Header />
 
-      <div className='content'>
+      <Container>
         <Stories users={following}/>
         <Posts users={following}/>
-      </div>
+      </Container>
     </div>
   );
 }

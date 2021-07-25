@@ -24,6 +24,15 @@
     height: 97%;
     background: vars.$white;
 
+    svg {
+        cursor: pointer;
+    }
+
+    .post-container {
+        padding-left: .6rem;
+        padding-right: .6rem;
+    }
+
     .head {
         display: flex;
         padding: .5rem 0;

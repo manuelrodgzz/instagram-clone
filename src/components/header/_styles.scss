@@ -6,30 +6,49 @@
     height: 3vh;
     display: flex;
     align-items: center;
-    padding: 1rem;
+    padding: 1rem 0;
 
-    div {
-
+    & > div {
         display: flex;
-        align-items: center;
-
-        .logo {
-            width: 100%;
-        }
-    }
-    
-    .icons-container {
-
         justify-content: space-between;
-        margin-left: 15%;
+        padding: 0 1rem;
+        width: 100%;
+        max-width: 58rem;
+        margin: 0 auto;
 
-        // svg, .user {
-        //     margin-right: 1rem;
-        // }
-
-        .user, svg {
-            width: 11%;
+        div {
+    
+            display: flex;
+            align-items: center;
+    
+            .logo {
+                width: 6rem;
+    
+                @media screen and (min-width: vars.$desktop) {
+                    width: 8rem;
+                }
+            }
+        }
+        
+        .icons-container {
+    
+            justify-content: space-between;
+            // margin-left: 15%;
+    
+            svg, .user {
+                margin-left: 1.1rem;
+            }
+    
+            .user, svg {
+    
+                width: 80%;
+    
+                @media screen and (min-width: vars.$tablet) {
+                    width: 2rem;
+                }
+            }
         }
     }
+
 
 }

@@ -8,16 +8,54 @@
     border: 1px solid vars.$border-color;
     display: flex;
     align-items: center;
-    overflow-x: auto;
     list-style: none;
+    position: relative;
 
-    &::-webkit-scrollbar {
-        width: 0;  /* Remove scrollbar space */
-        background: transparent;  /* Optional: just make scrollbar invisible */
+
+    .arrow-right, .arrow-left {
+        cursor: pointer;
+        width: 1.2rem;
+        height: 1.2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        border-radius: 50%;
+        background-color: vars.$white;
+
+        -webkit-box-shadow: 0px 0px 48px -1px rgba(0,0,0,1); 
+        box-shadow: 0px 0px 48px -1px rgba(0,0,0,1);
     }
 
-    .story {
-        margin: 0 .5rem;
+    .arrow-right {
+        right: 0;
     }
+
+    .arrow-left {
+        left: 0;
+    }
+
+    & > div {
+        overflow-x: auto;
+
+        &::-webkit-scrollbar {
+            width: 0;  /* Remove scrollbar space */
+            height: 0;/* Remove scrollbar height*/
+            background: transparent;  /* Optional: just make scrollbar invisible */
+        }
+
+        ul {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding: 0;
+            margin: 0;
+        
+            .story {
+                margin: 0 .5rem;
+            }
+        }
+    }
+
 
 }

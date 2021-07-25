@@ -5,8 +5,20 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEllipsisH, faHeart as faHeartSolid, faBookmark as faBookmarkSolid } from '@fortawesome/free-solid-svg-icons'
 import { faHeart, faComment, faPaperPlane, faBookmark } from '@fortawesome/free-regular-svg-icons'
 import './_styles.scss'
-import Container from '../cotainer'
 import Comment from '../comment'
+
+interface PostContainerProps {
+    children?: any
+}
+
+const PostContainer = ({children}: PostContainerProps) => {
+
+    return (
+        <div className='post-container'>
+            {children}
+        </div>
+    )
+}
 
 interface PostProps {
     post: IPost,
@@ -43,7 +55,7 @@ const Post = ({post, user}: PostProps) => {
         <div className='post'>
 
             {/* User and picture location */}
-            <Container>
+            <PostContainer>
                 <div className='head'>
                     <ProfilePicture user={user} size='sm'/>
 
@@ -54,7 +66,7 @@ const Post = ({post, user}: PostProps) => {
 
                     <FontAwesomeIcon icon={faEllipsisH}/>
                 </div>
-            </Container>
+            </PostContainer>
 
             {/* Picture */}
             <img 
@@ -62,7 +74,7 @@ const Post = ({post, user}: PostProps) => {
                 onDoubleClick={() => setLiked(!liked)}
             />
 
-            <Container>    
+            <PostContainer>    
                 <div className='actions'>
 
                     {/* Like, comment and share */}
@@ -116,7 +128,7 @@ const Post = ({post, user}: PostProps) => {
                 <div className="text-dark-grey">
                     {getTime()} ago
                 </div>
-            </Container>
+            </PostContainer>
 
         </div>
     )

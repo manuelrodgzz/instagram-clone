@@ -1,4 +1,20 @@
+@use '../../vars';
+
 .container {
-    padding-left: .6rem;
-    padding-right: .6rem;
+    margin-top: 1%;
+    height: 97vh;
+    margin: 0 auto;
+    overflow: auto;
+    
+    @media screen and (min-width: vars.$tablet) {
+        padding: 0 12%;
+    }
+    
+    @media screen and (min-width: vars.$desktop) {
+        padding: 0 28%;
+    }
+
+    @media screen and (min-width: vars.$widescreen) {
+        padding: 0 35%;
+    }
 }

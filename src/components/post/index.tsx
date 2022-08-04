@@ -79,7 +79,7 @@ const Post = (props: PostProps) => {
     }
 
     return (
-        <div className='post'>
+        <article className='post'>
 
             {/* User and picture location */}
             <PostContainer>
@@ -177,7 +177,7 @@ const Post = (props: PostProps) => {
                 <CommentInput inputRef={inputRef} className='line' onComment={handleNewComment}/>
             </PostContainer>
 
-        </div>
+        </article>
     )
 }
 

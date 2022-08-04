@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSmileBeam } from '@fortawesome/free-regular-svg-icons'
 import EmojiPicker, { IEmojiData } from 'emoji-picker-react'
-import faker from 'faker';
+import { faker } from '@faker-js/faker';
 
 import './_styles.scss'
 import { IComment } from '../../interfaces'

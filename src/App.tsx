@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from './components/header'
 import Stories from './components/stories'
 import Posts from './components/posts'
-import faker from 'faker'
+import { faker } from '@faker-js/faker'
 
 import { IUser } from './interfaces'
 import './App.scss';

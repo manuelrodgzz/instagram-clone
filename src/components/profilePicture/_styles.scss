@@ -25,7 +25,7 @@
         width: 95%;
         height: 95%;
         transition: all;
-        animation: shiny 500ms infinite;
+        animation: shiny 300ms alternate infinite;
     }
 
     &.seen {

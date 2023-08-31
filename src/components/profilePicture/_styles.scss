@@ -1,5 +1,15 @@
 @use '../../vars';
 
+@keyframes shiny {
+    from {
+        background-color: rgba(255,255,255,0);
+    }
+
+    to {
+        background-color: rgba(255,255,255,.3);
+    }
+}
+
 .profile-picture {
     border-radius: 50%;
     background: linear-gradient(45deg, vars.$orage, vars.$pink);
@@ -7,6 +17,16 @@
     align-items: center;
     justify-content: center;
     padding: 2px;
+
+    &::before {
+        content: '';
+        border-radius: 100%;
+        border: 1px solid vars.$white;
+        width: 95%;
+        height: 95%;
+        transition: all;
+        animation: shiny 500ms infinite;
+    }
 
     &.seen {
         background: vars.$medium-grey;
@@ -26,7 +46,18 @@
         font-size: 1px;
     }
 
+    &.loaded {
+        img {
+            display: initial;
+        }
+
+        &::before {
+            display: none;
+        }
+    }
+
     img {
+        display: none;
         width: 95%;
         border-radius: 50%;
         border: 1em solid vars.$white;
